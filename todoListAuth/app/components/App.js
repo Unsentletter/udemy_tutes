@@ -8,21 +8,30 @@ import {
 
 import Login from './Login';
 import Main from './Main';
+import AlertContainer from './alerts/AlertContainer';
 
 var App = React.createClass({
   getInitialState(){
     return {}
   },
   render() {
-    if (this.props.user_id) {
-      return (
-        <Main />
-      );
-    } else {
-      return (
-        <Login />
-      );
+    var renderMainView = () => {
+      if (this.props.user_id) {
+        return (
+          <Main />
+        );
+      } else {
+        return (
+          <Login />
+        );
+      }
     }
+    return (
+      <View style={{flex: 1}}>
+        {renderMainView()}
+        <AlertContainer/>
+      </View>
+    )
   }
 });
 

@@ -8,12 +8,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import {authUser} from '../actions';
+import {authUser, addAlert} from '../actions';
 
 var Login = React.createClass({
   onSignIn: function() {
     var {email, password} = this.props.fields;
-    this.props.dispatch(authUser('fake ID'));
+    this.props.dispatch(addAlert('Hello'));
+    // this.props.dispatch(authUser('fake ID'));
     // console.log(email.value, password.value);
   },
   render() {
