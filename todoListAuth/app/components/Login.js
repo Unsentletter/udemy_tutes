@@ -8,10 +8,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import {authUser} from '../actions';
+
 var Login = React.createClass({
   onSignIn: function() {
     var {email, password} = this.props.fields;
-    console.log(email.value, password.value);
+    this.props.dispatch(authUser('fake ID'));
+    // console.log(email.value, password.value);
   },
   render() {
     var {fields: {email, password}} = this.props;
@@ -34,7 +37,7 @@ var Login = React.createClass({
 
         <View style={styles.field}>
           <TextInput
-          {...email}
+            {...email}
             placeholder='Email'
             style={styles.textInput}
             />
@@ -45,7 +48,7 @@ var Login = React.createClass({
 
         <View style={styles.field}>
           <TextInput
-          {...password}
+            {...password}
             placeholder='Password'
             style={styles.textInput}
             />
@@ -116,10 +119,10 @@ const styles = StyleSheet.create({
 var validate = (formProps) => {
   var errors = {};
   if (!formProps.email) {
-    errors.email = 'Please enter an email'
+    errors.email = 'Please enter an email';
   }
   if (!formProps.password) {
-    errors.password = 'Please enter a password'
+    errors.password = 'Please enter a password';
   }
   return errors;
 }
