@@ -10,7 +10,6 @@ exports.loginUser = (email, password) => {
       var {user_id, token} = response.data;
       Keychain.setGenericPassword(user_id, token)
       .then(function() {
-        dispatch(addAlert(token));
         dispatch(authUser(user_id));
       }).catch((error) => {
         dispatch(addAlert("Could not log in"));
@@ -29,7 +28,6 @@ exports.signupUser = (email, password) => {
       var {user_id, token} = response.data;
       Keychain.setGenericPassword(userId, token)
       .then(function (){
-        dispatch(addAlert(token));
         dispatch(authUser(user_id));
       }).catch((error) => {
         dispatch(addAlert("Could not log in"));
