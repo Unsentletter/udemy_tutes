@@ -194,7 +194,6 @@ header {
   background-position: center;
   height: 100vh;
   background-attachment: fixed;
-
 }
 
 .hero-text-box {
@@ -250,7 +249,7 @@ header {
   border-bottom: 2px solid #e67e22;
 }
 
-/*MONILE NAV*/
+/*MOBILE NAV*/
 .mobile-nav-icon {
   float: right;
   margin-top: 30px;
