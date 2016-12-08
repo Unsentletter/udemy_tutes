@@ -20,7 +20,7 @@ $(document).ready(function() {
     $('html, body').animate({scrollTop: $('.js--section-features').offset().top}, 1000);
   });
 
-  // NAVIGATION SCROOLL
+  // NAVIGATION SCROLL
   $(function() {
   $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
