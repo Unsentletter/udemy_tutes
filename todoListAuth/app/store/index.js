@@ -15,3 +15,4 @@ exports.configureStore = (initialState=defaultState) => {
   persistStore(store, {storage: AsyncStorage})
   return store;
 }
+ 

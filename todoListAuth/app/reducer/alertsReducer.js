@@ -12,7 +12,7 @@ module.exports = (state=defaultState, action) => {
           id: uuid.v4()
         }
       ];
-
+ 
     case 'REMOVE_ALERT':
     return state.filter((alert) => {
       if (alert.id === action.id) {
@@ -26,4 +26,3 @@ module.exports = (state=defaultState, action) => {
       return state;
   }
 }
- 

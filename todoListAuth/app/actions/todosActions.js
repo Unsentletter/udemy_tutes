@@ -18,7 +18,7 @@ exports.createTodo = (text) => {
     })
   }
 }
- 
+
 exports.deleteTodo = (todo_id) => {
   return function(dispatch) {
     return Keychain.getGenericPassword().then((credentials) => {
@@ -35,17 +35,17 @@ exports.deleteTodo = (todo_id) => {
 }
 
 exports.getTodos = function(dispatch) {
-    return Keychain.getGenericPassword().then((credentials) => {
-      var {username, password} = credentials;
-      return axios.get(TODOS_URL(username), {
-        headers: {authorization: password}
-      }).then((response) => {
-        dispatch(setTodos(response.data.todos));
-      }).catch((err) => {
-        dispatch(addAlert("Couldnt get todos :("));
-      })
+  return Keychain.getGenericPassword().then((credentials) => {
+    var {username, password} = credentials;
+    return axios.get(TODOS_URL(username), {
+      headers: {authorization: password}
+    }).then((response) => {
+      dispatch(setTodos(response.data.todos));
+    }).catch((err) => {
+      dispatch(addAlert("Couldnt get todos :("));
     })
-  }
+  })
+}
 
 var addTodo = (newTodo) => {
   return {

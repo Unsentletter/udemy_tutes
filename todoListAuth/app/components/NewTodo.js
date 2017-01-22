@@ -10,7 +10,7 @@ import {
   RefreshControl,
   TextInput
 } from 'react-native';
- 
+
 import {createTodo} from '../actions';
 
 var TodoList = React.createClass({
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     height: 26
   }
 });
-
+ 
 var mapStateToProps = (state) => {
   return {
     todos: state.todos
