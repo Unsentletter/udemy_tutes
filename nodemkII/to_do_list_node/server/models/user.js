@@ -14,6 +14,7 @@ var UserSchema = new mongoose.Schema({
       validator: validator.isEmail,
       message: `{VALUE} is not a valid email`
     }
+    //validate uses mongoose validation
   },
   password: {
     type: String,
